@@ -1,14 +1,61 @@
 .movie-card {
     margin-left: 10px;
     margin-bottom: 10px;
-    max-width: 300px;
-    width: 300px;
+    &.threeRow {
+        max-width: 300px;
+        width: 300px;
+    }
+    &.twoRow {
+        max-width: 500px;
+        width: 500px;
+    }
 }
 
 .movie-card.card {
-    height: 450px;
+    &.threeRow {
+        height: 450px;
+    }
+    &.twoRow {
+        height: 550px;
+    }
+    &.gold {
+        border: 3px solid gold;
+    }
+    &.silver {
+        border: 3px solid silver;
+    }
 }
 
 .card-footer-badge {
     font-size: 1rem;
+}
+
+
+.card-deck .movie-card.twoRow:nth-child(2n+1) .movie-card.card.twoRow {
+    flex-direction: column-reverse;
+}
+
+.card-deck .movie-card.column:nth-child(2n+1) .movie-card.card.column {
+    display: grid;
+    grid-template-rows: auto auto;
+    grid-template-columns: 2fr 1fr;
+    .card-footer {
+        grid-column-end: span 3;
+    }
+}
+
+.card-deck .movie-card.column:nth-child(2n) .movie-card.card.column {
+    display: grid;
+    grid-template-rows: auto auto;
+    grid-template-columns: 1fr 2fr;
+    .card-img-top {
+        grid-column-start: 2
+    }
+    .card-body {
+        grid-column-start: 1;
+        grid-row-start: 1;
+    }
+    .card-footer {
+        grid-column: 1/3;
+    }
 }
