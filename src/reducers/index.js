@@ -1,3 +1,3 @@
-import rootReducer from './movieReducer';
+import rootReducer from './rootReducer';
 
 export default rootReducer;

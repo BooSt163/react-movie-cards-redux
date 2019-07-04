@@ -5,7 +5,7 @@ const initialState = {
     viewType: 'threeRow'
 };
 
-export  const rootReducer = (state = initialState, action) => {
+export  default (state = initialState, action) => {
     const { type, payload } = action;
 
     switch(type) {
